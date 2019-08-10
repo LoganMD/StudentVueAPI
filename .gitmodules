@@ -1,0 +1,3 @@
+[submodule "StudentVue"]
+	path = StudentVue
+	url = https://github.com/kajchang/StudentVue.git
