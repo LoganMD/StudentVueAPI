@@ -1,8 +1,8 @@
 import sys
-from StudentVue/studentvue import StudentVue
+from StudentVue import studentvue
 id = sys.argv[1]
 password = sys.argv[2]
 url = sys.argv[3]
-sv = StudentVue(id, password, url) # e.g. portal.sfusd.edu
+sv = studentvue.StudentVue(id, password, url) # e.g. portal.sfusd.edu
 print(sv.getStudentInfo())
 #print(id)
