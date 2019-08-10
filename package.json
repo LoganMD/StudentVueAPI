@@ -1,0 +1,19 @@
+{
+  "name": "studentvueapi",
+  "version": "1.0.0",
+  "description": "An api for kajchang's StudentVUE Python Script",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LoganMD/StudentVueAPI.git"
+  },
+  "author": "Logandev_",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LoganMD/StudentVueAPI/issues"
+  },
+  "homepage": "https://github.com/LoganMD/StudentVueAPI#readme"
+}
