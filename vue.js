@@ -1,6 +1,6 @@
 function getSTInfo(id, password, url) {
     var spawn = require("child_process").spawn;
-    var process = spawn('python',["./StudentVue/getStudentInfo.py", id, password, url] );
+    var process = spawn('python',["./getStudentInfo.py", id, password, url] );
     return new Promise(resolve => {
       process.stdout.on('data', function(data) {
         resolve(data.toString());
@@ -14,6 +14,8 @@ async function getSInfo(id, password, url) {
 }
 
 function getSCInfo(id, password, url) {
+    var spawn = require("child_process").spawn;
+    var process = spawn('python',["./getSchoolInfo.py", id, password, url] );
     return new Promise(resolve => {
       process.stdout.on('data', function(data) {
         resolve(data.toString());
