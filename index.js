@@ -51,6 +51,26 @@ app.post('/getSchoolInfo', (req, res) => {
     StudentVue.getSchoolInfo(req.body.id, req.body.password, req.body.url).then(resp => res.send(resp))
 })
 
+app.post('/getClasses', (req, res) => {
+    if(!req.body.id) {
+        return res.status(400).send({
+            message: "id content can not be empty"
+        });
+    }
+    if(!req.body.password) {
+        return res.status(400).send({
+            message: "id content can not be empty"
+        });
+    }
+    if(!req.body.url) {
+        return res.status(400).send({
+            message: "id content can not be empty"
+        });
+    }
+
+    StudentVue.getClasses(req.body.id, req.body.password, req.body.url).then(resp => res.send(resp))
+})
+
 app.listen(3000, () => {
     console.log("Server is listening on port 3000");
 });

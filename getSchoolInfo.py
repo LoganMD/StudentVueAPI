@@ -1,8 +1,9 @@
 import sys
-from StudentVue import studentvue
+import studentvue
+import jsonpickle
 id = sys.argv[1]
 password = sys.argv[2]
 url = sys.argv[3]
 sv = studentvue.StudentVue(id, password, url) # e.g. portal.sfusd.edu
-print(sv.getSchoolInfo())
+print(jsonpickle.encode(sv.get_school_info(), unpicklable=False))
 #print(id)

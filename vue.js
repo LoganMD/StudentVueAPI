@@ -10,7 +10,7 @@ function getSTInfo(id, password, url) {
 
 async function getSInfo(id, password, url) {
   var result = await getSTInfo(id, password, url)
-  return result
+  return JSON.parse(result)
 }
 
 function getSCInfo(id, password, url) {
@@ -25,8 +25,24 @@ function getSCInfo(id, password, url) {
 
 async function getSCHInfo(id, password, url) {
   var result = await getSCInfo(id, password, url)
-  return result
+  return JSON.parse(result)
+}
+
+function getC(id, password, url) {
+    var spawn = require("child_process").spawn;
+    var process = spawn('python',["./getClasses.py", id, password, url] );
+    return new Promise(resolve => {
+      process.stdout.on('data', function(data) {
+        resolve(data.toString());
+      })
+  });
+}
+
+async function getCL(id, password, url) {
+  var result = await getC(id, password, url)
+  return JSON.parse(result)
 }
 
 module.exports.getSchoolInfo = getSCHInfo
-exports.getStudentInfo = getSInfo
+module.exports.getStudentInfo = getSInfo
+module.exports.getClasses = getCL
