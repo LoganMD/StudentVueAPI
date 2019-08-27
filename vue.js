@@ -1,6 +1,8 @@
+var pythonver = require("fs").readFileSync("pythonver.txt")
+
 function getSTInfo(id, password, url) {
     var spawn = require("child_process").spawn;
-    var process = spawn('python',["./getStudentInfo.py", id, password, url] );
+    var process = spawn(pythonver,["./getStudentInfo.py", id, password, url] );
     return new Promise(resolve => {
       process.stdout.on('data', function(data) {
         resolve(data.toString());
@@ -15,7 +17,7 @@ async function getSInfo(id, password, url) {
 
 function getSCInfo(id, password, url) {
     var spawn = require("child_process").spawn;
-    var process = spawn('python',["./getSchoolInfo.py", id, password, url] );
+    var process = spawn(pythonver,["./getSchoolInfo.py", id, password, url] );
     return new Promise(resolve => {
       process.stdout.on('data', function(data) {
         resolve(data.toString());
@@ -30,7 +32,7 @@ async function getSCHInfo(id, password, url) {
 
 function getC(id, password, url) {
     var spawn = require("child_process").spawn;
-    var process = spawn('python',["./getClasses.py", id, password, url] );
+    var process = spawn(pythonver,["./getClasses.py", id, password, url] );
     return new Promise(resolve => {
       process.stdout.on('data', function(data) {
         resolve(data.toString());
